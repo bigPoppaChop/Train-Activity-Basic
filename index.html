@@ -19,24 +19,32 @@
 <!-- Firebase reference -->
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 
+<!-- Icon reference -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 <title>Homework 7: Train Activity (Basic)</title>
 </head>
 <body>
-<div class="container bg">
 
-  <!-- Jumbotron Title -->
-   <div class="jumbotron bighead border border-warning bg-info">
-      <h1 class="text-center">
-        <u>Train Schedule</u>
-      </h1>
-    </div>
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid big-train-pic">
+  <div class ="container">
+    <h1 class="display-4 text-center" id="title-text">
+      Train Schedule
+    </h1>
+  </div>
+</div>
+
+<!-- BIG CONTAINER -->
+<div class="container">
 
   <!-- Row containing Train Schedule and Input form -->
   <div class="row">
   
   <!-- column to hold input form -->
   <div class="col-sm-4">
-    <div class="card bg-info text-white mb-4">
+    <div class="card mb-4">
       <!-- Data input Card Header -->
       <div class="card-header">
         <strong>
@@ -65,28 +73,29 @@
           <div class="form-group">
             <label for="first-train-input">First Train</label>
             <input class="form-control" id="first-train" placeholder="24:00" type="text">
-            <!-- type="time" replaced with type="text in Safari"-->
           </div>
           
-
           <!-- Train Frequency input box -->
           <div class="form-group">
             <label for="frequency-input">Train's Frequency</label>
             <input class="form-control" id="frequency-input" placeholder="(minutes)" type="number">
           </div>
+
           <!-- Submit buttons -->
-          <button type="button" class="btn btn-primary float-right" id="submit-train-btn">
-            Submit Train
+          <button type="button" class="btn float-right" id="submit-train-btn">
+            <i class="fas fa-train"></i>
+            Submit
           </button> 
         </form>
       </div>
     </div>
   </div>
 
-  <div class="col">
+  
   <!-- Train information form -->
+  <div class="col">
   <div class="card">
-    <div class="card-header bg-info text-center">
+    <div class="card-header text-center" id="table-header">
       <strong>
         Train Schedule
       </strong>
@@ -97,11 +106,12 @@
           <tr class = "table-info">
             <th scope="col">Train Name</th>
             <th scope="col">Destination</th>
-            <th scope="col">First Train Time (24:00)</th>
+            <th scope="col">Next Train</th>
             <th scope="col">Frequency (mins)</th>
+            <th scope="col">Minutes away</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tester-tbody">
           </tbody>
         </table>
       </div>

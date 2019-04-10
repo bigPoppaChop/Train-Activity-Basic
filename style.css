@@ -1,3 +1,24 @@
 body{
-  background-color: lightgrey;
+  background-color: papayawhip;
+}
+.big-train-pic{
+  background-image: url("assets/header_train.jpg");
+  background-size: cover;
+  background-position:center;
+  border-bottom: 5px solid teal;
+}
+.card-header{
+  background-color: teal;
+}
+#title-text{
+  text-shadow: 1px 1px 4px black;
+  color: teal;
+  text-decoration: underline;
+}
+#table-header{
+  background-color: teal
+}
+
+#submit-train-btn{
+  background-color: teal;
 }
