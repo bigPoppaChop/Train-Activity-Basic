@@ -19,30 +19,29 @@
 <title>Homework 7: Train Activity (Basic)</title>
 </head>
 <body>
-<div class="container">
-  
-    
+<div class="container bg">
+
   <!-- Jumbotron Title -->
-  <div class="jumbotron border-primary">
-    <h1 class="text-center">
-      <u>
-      Train Schedule
-      </u></h1>
-  </div>
+   <div class="jumbotron bighead border border-warning bg-info">
+      <h1 class="text-center">
+        <u>Train Schedule</u>
+      </h1>
+    </div>
+
   <!-- Row containing Train Schedule and Input form -->
   <div class="row">
   
   <!-- column to hold input form -->
-  <div class="col-md-3">
-
+  <div class="col-sm-4">
+    <div class="card bg-info text-white mb-4">
       <!-- Data input Card Header -->
-      <div class="card-header text-center border-primary ">
+      <div class="card-header">
         <strong>
         Add Train
         </strong>
       </div>
       <!-- Data Entry Card -->
-      <div class="card-body border border-info">
+      <div class="card-body">
 
         <!-- Entry Form -->
         <form>
@@ -71,33 +70,37 @@
             <label for="frequency-input">Train's Frequency</label>
             <input class="form-control" id="frequency-input" placeholder="(minutes)" type="number">
           </div>
-          <button class="btn btn-primary float-right" id="add-employee-btn">HI
-          </button>  
+          <!-- Submit buttons -->
+          <button type="button" class="btn btn-primary float-right">
+            Submit Train
+          </button> 
         </form>
       </div>
+    </div>
   </div>
 
   <div class="col">
   <!-- Train information form -->
   <div class="card">
-    <div class="card-header text-center">
+    <div class="card-header bg-info text-center">
       <strong>
         Train Schedule
       </strong>
     </div>
     <div class="card-body">
-      <table class="table table-sm table-hover" id='employee-table'>
+      <table class="table table-sm table-hover bg-warning" id='employee-table'>
         <thead>
           <tr>
             <th scope="col">Train Name</th>
             <th scope="col">Destination</th>
             <th scope="col">First Train Time (24:00)</th>
             <th scope="col">Frequency (mins)</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
     

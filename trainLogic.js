@@ -1,6 +1,4 @@
 
-
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAlebel_msJC7vEXyCHtbakAfcVNl10fzE",
@@ -11,3 +9,8 @@ var config = {
   messagingSenderId: "1085300662209"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
+
+// Button for adding trains
+$("#add-employee-btn").on("click", function(event) {
+  event.preventDefault();
