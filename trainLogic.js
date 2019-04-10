@@ -54,5 +54,8 @@ $("#submit-train-btn").on("click", function(event) {
   console.log("Current Time: " + moment(currentTime).format("hh:mm"));
   var timeDiff = moment(trainFirst).diff(moment(currentTime), "minutes");
   console.log("Difference in time: " + timeDiff);
+
+  // test
+  
 });
 
