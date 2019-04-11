@@ -13,20 +13,34 @@ database.ref().on("child_added", function(childSnapshot) {
   console.log(trainFirst);
   console.log(trainFrequency);
 
-  // I am very confused regarding moment.js and the "Minutes Away" will be non-functioning until i can get some extra help
-  // 
-  // var trainFirstClean = 
+  /// convert submitted time
+  var firstTimeConverted = moment(trainFirst, "HH:mm");
+  console.log(firstTimeConverted);
+  // Current Time
+  var currentTime = moment();
+  console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+  // Difference between the times
+  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+  console.log("DIFFERENCE IN TIME: " + diffTime);
+  // Time apart (remainder)
+  var tRemainder = diffTime % trainFrequency;
+  console.log(tRemainder);
+  // Minute Until Train
+  var tMinutesTillTrain = trainFrequency- tRemainder;
+  console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+  // Next Train
+  var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("hh:mm");
+  console.log("ARRIVAL TIME: " + nextTrain);
 
-  // create new row in the table
-  var newRow = $("<tr>").append(
+  // Create the new row
+  var newTrain = $("<tr>").append(
     $("<td>").text(trainName),
     $("<td>").text(trainDestination),
-    $("<td>").text(trainFirst),
+    $("<td>").text(nextTrain),
     $("<td>").text(trainFrequency),
-    $("<td>").text("¯\_(ツ)_/¯")
-
+    $("<td>").text(tMinutesTillTrain)
   );
   
   // Append the new row to the table
-  $("#tester-tbody > tbody").append(newRow);
+  $("#schedule-table > tbody").append(newTrain);
 });
